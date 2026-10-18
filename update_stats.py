@@ -6,8 +6,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "data" / "stats.json"
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "stats.json"
 SEASON = int(os.environ.get("NFL_SEASON", datetime.now(timezone.utc).year))
 BASE = "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.parquet"
 
